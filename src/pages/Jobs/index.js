@@ -63,6 +63,7 @@ const Jobs = () => {
                 </div>
                 {openedJob === job.name && (
                     <div className="job-container__description-container">
+                        <div className="job-container__description-container__divider" />
                         <div className="job-container__description-container__description">
                             {job.description}
                         </div>
