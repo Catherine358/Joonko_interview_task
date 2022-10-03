@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import LocationOn from '@material-ui/icons/LocationOn';
+import Apartment from '@material-ui/icons/Apartment';
 
 import './index.scss';
 
@@ -42,11 +44,17 @@ const Jobs = () => {
                     <div className="job-container__job__title-container">
                         <div className="job-container__job__title-container__title-main">
                             <span className="job-container__job__title-container__title-main__title">{job.name}</span>
-                            {openedJob === job.name ? <span onClick={onCloseJobHandler}><KeyboardArrowUpIcon /></span> : <span onClick={() => onOpenJobHandler(job.name)}><KeyboardArrowDownIcon /></span>}
+                            {openedJob === job.name ? <span className="job-container__job__title-container__title-main__title__icon" onClick={onCloseJobHandler}><KeyboardArrowUpIcon /></span> : <span className="job-container__job__title-container__title-main__title__icon" onClick={() => onOpenJobHandler(job.name)}><KeyboardArrowDownIcon  /></span>}
                         </div>
                         <div className="job-container__job__title-container__title-main">
-                            <span>{job.location}</span>
-                            <span>{job.department}</span>
+                            <div className="job-container__job__title-container__title-main__icon-container">
+                                <LocationOn className="job-container__job__title-container__title-main__icon-container__icon" />
+                                <span>{job.location}</span>
+                            </div>
+                            <div className="job-container__job__title-container__title-main__icon-container">
+                                <Apartment className="job-container__job__title-container__title-main__icon-container__icon" />
+                                <span>{job.department}</span>
+                            </div>
                         </div>
                     </div>
                     <div className="job-container__job__title-container">
