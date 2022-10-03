@@ -12,8 +12,24 @@
     font-family: "Mulish";
     color: #010A60;
 
-    &__description {
-      margin-top: 50px;
+    &__description-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &__description {
+        margin-top: 50px;
+      }
+
+      &__apply-btn {
+        margin-top: 66px;
+        width: 84px;
+        height: 38px;
+        background-color: #7B3FF2;
+        border-radius: 6px;
+        color: white;
+      }
     }
 
     &__job {
